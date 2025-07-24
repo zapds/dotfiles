@@ -1,0 +1,11 @@
+configuration {
+    show-icons:      true;
+    display-drun:    "";
+    sort: true;
+    sorting-method: "fzf";
+    disable-history: false;
+    modi: "combi";
+    combi-modi: "drun";
+}
+
+@theme "~/.config/rofi/theme.rasi"

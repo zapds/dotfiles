@@ -1,0 +1,164 @@
+{
+  "layer": "top",
+  "style": "~/.config/waybar/style.css",
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  // "modules-left": ["cpu", "memory", "network#speed"],
+  "modules-left": [
+    // "cpu",
+    "memory",
+    // "temperature#gpu",
+    "hyprland/workspaces",
+    "cava"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/cava",
+    "network",
+    // "bluetooth",
+    "pulseaudio",
+    "battery"
+  ],
+  "cava": {
+    "hide_on_silence": true,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "bars": 6,
+    "bar_delimiter": 0,
+    "sleep_timer": 5,
+    "cava_config": "/home/zapdos/.config/cava/config",
+  },
+  "temperature#gpu": {
+    "thermal-zone": 5,
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C ",
+    "tooltip": false
+  },
+  // "network#speed": {
+  //   "interval": 1,
+  //   "format": "{ifname}%%",
+  //   "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+  //   "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+  //   "format-disconnected": "󰌙",
+  //   "tooltip-format": "{ipaddr}",
+  //   "format-linked": "󰈁 {ifname} (No IP)",
+  //   "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+  //   "tooltip-format-ethernet": "{ifname} 󰌘",
+  //   "tooltip-format-disconnected": "󰌙 Disconnected",
+  //   "max-length": 22,
+  //   "min-length": 20,
+  //   "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+  //   "tooltip": false
+  // },
+  "cpu": {
+    "interval": 1,
+    "format": "{usage}% \uf4bc",
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 1,
+    "format": "{percentage}% \uefc5",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+    "default": "",
+    "active": ""
+    //"default": "○",
+    //"default": "●"
+    }
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p • %a %d/%m}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 2,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+  }
+
+  },
+  "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-icons": [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤢 ",
+      "󰤨 "
+    ],
+    "format-disconnected": "󰪎",
+    "interval": 2,
+    "tooltip-format": "{essid} {signalStrength}%"
+  },
+  "battery": {
+    "states": {
+      "good": 60,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": " {capacity}% {icon} ",
+    "format-full": "{icon}",
+    "format-plugged": " {capacity}% <span font='Font Awesome 5 Free'>\uf0e7</span> ",
+    "format-alt": "{icon}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "tooltip": false,
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-muted": "\uf466",
+    "tooltip-format": "{icon} {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+     "default": ["", "", ""]
+    }
+},
+  "bluetooth": {
+    "format": "{icon} {device_alias} {device_battery_percentage}",
+    "format-icons": [
+      "",
+      "󰤾",
+      "󰥀",
+      "󰥄",
+      "󰥈"
+    ],
+    "format-connected": "{icon} {num_connections}",
+    "format-connected-battery": "{icon} {device_battery_percentage}%",
+    "tooltip": false
+  }
+}

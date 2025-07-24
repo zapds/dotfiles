@@ -1,0 +1,153 @@
+@import 'color.css';
+
+/* @font-face {
+    font-family: 'Adwaita Mono';
+    src: url('AdwaitaMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+* {
+    min-height: 14px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0;
+    margin: 0;
+    border: none;
+    min-height: 14px;
+}
+
+tooltip {
+    border-radius: 4px;
+    background-color: rgba(0,0,0, 0.8);
+}
+
+
+#workspaces {
+    background: rgba(23, 23, 23, 0.0);
+    color: #888789;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 9px;
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+}
+
+#workspaces button {
+    background: rgba(23, 23, 23, 0.0);
+    color: #A1BDCE;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 9px;
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+    /*   animation: ws_normal 20s ease-in-out 1; */
+}
+
+
+
+#workspaces button.active {
+
+
+    /* background-image: url("/home/anik/Documents/bar1.png");*/
+    color: #A1BDCE;
+    transition: all 0.3s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+    /*  transition: all 0.4s cubic-bezier(.55,0.68,.48,1.682); */
+}
+
+#workspaces button:hover {
+    background: none;
+    color: #72D792;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+
+#clock,
+#pulseaudio,
+#backlight,
+#bluetooth,
+#network,
+/* #network.speed, */
+#battery,
+/* #temperature.gpu, */
+#custom-cava,
+/* #cpu, */
+#memory,
+#custom-power {
+    background: transparent;
+    font-family: 'Adwaita Mono';
+    font-weight: bold;
+    color: @foreground;
+    padding: 6px 8px;
+    margin: 0 2px;
+    border-radius: 6px;
+}
+
+#workspaces,
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.active,
+#workspaces button.focused {
+    all: unset;
+    color: @foreground;
+    /* background: @background; */
+    min-width: 30px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+#custom-cava {
+    font-family: 'bargraph';
+}
+
+#battery.charging,
+#battery.good:not(.charging),
+#battery.warning:not(.charging),
+#battery.low:not(.charging),
+#battery.critical:not(.charging) {
+    border-radius: 6px;
+}
+
+#battery.good:not(.charging) {
+    color: #f8d589;
+}
+
+#battery.warning:not(.charging) {
+    color: #e0a858;
+}
+
+#battery.low:not(.charging),
+#battery.critical:not(.charging) {
+    color: #d20f39;
+}
+
+#battery.critical:not(.charging) {
+    animation: blink 0.75s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #d20f39;
+        background: #eff1f5;
+    }
+}
+
+#cava {
+    font-weight: bold;
+    color: @foreground;
+    padding: 6px 8px;
+}

@@ -16,4 +16,5 @@ alias ls=lsd
 alias fetch=fastfetch
 alias v=nvim
 alias cd=z
+alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 cat ~/.cache/wal/sequences
